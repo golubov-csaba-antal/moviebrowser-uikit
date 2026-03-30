@@ -17,7 +17,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 
 @Module
 @InstallIn(ViewModelComponent::class)
-class ProvideModule {
+class UIKitProviderModule {
 
     @Provides
     fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient =
