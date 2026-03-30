@@ -1,4 +1,4 @@
-package com.zappyware.moviebrowser.uikit.di
+package com.zappyware.moviebrowser.di
 
 import com.zappyware.moviebrowser.repository.IMoviesRepository
 import com.zappyware.moviebrowser.repository.MoviesRepository

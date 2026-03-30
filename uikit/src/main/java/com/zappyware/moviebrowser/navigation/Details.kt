@@ -1,4 +1,4 @@
-package com.zappyware.moviebrowser.uikit.navigation
+package com.zappyware.moviebrowser.navigation
 
 import com.zappyware.moviebrowser.data.MediaType
 

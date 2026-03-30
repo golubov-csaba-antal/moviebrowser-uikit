@@ -1,4 +1,4 @@
-package com.zappyware.moviebrowser.uikit.di
+package com.zappyware.moviebrowser.di
 
 import android.content.Context
 import com.google.gson.Gson
