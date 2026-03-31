@@ -18,8 +18,15 @@ import kotlinx.coroutines.async
 fun FavoriteIcon(
     modifier: Modifier,
     contentId: String,
+    hideIfNotFavorite: Boolean = false,
 ) {
     var isFavorite by remember { mutableStateOf(false) }
+
+    val drawableResource = if (isFavorite) {
+        R.drawable.ic_favorite_on
+    } else {
+        R.drawable.ic_favorite_off
+    }
 
     val favoriteProvider = LocalFavoriteProvider.current
     val scope = rememberCoroutineScope()
@@ -30,14 +37,14 @@ fun FavoriteIcon(
         }.await()
     }
 
-    if (isFavorite) {
+    if (hideIfNotFavorite && !isFavorite) {
+        // don't show anything if not favorite as indicated
+    } else {
         Icon(
-            painter = painterResource(id = R.drawable.ic_favorite_on),
+            painter = painterResource(id = drawableResource),
             contentDescription = null,
             tint = MaterialTheme.colorScheme.primary,
             modifier = modifier,
         )
-    } else {
-        // don't show anything if not favorite
     }
 }

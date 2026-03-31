@@ -55,6 +55,7 @@ fun MovieWidgetFullScreenComposable(
                 .zIndex(2.0f)
                 .align(Alignment.TopStart),
             contentId = widget.id,
+            hideIfNotFavorite = true,
         )
         Column(
             modifier = Modifier

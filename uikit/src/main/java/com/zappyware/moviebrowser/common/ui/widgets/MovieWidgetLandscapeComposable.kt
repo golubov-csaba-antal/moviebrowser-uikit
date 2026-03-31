@@ -70,6 +70,7 @@ fun MovieWidgetLandscapeComposable(
                     .zIndex(2.0f)
                     .align(Alignment.TopStart),
                 contentId = widget.id,
+                hideIfNotFavorite = true,
             )
             Text(
                 modifier = Modifier.align(Alignment.BottomStart)
