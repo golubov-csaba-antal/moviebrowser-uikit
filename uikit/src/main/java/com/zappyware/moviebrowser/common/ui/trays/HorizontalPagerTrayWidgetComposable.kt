@@ -18,9 +18,8 @@ import androidx.compose.ui.unit.dp
 import com.zappyware.moviebrowser.common.ui.LocalWidgetMapper
 import com.zappyware.moviebrowser.common.ui.WidgetMapper
 import com.zappyware.moviebrowser.common.ui.graphicsLayer
+import com.zappyware.moviebrowser.data.common.Orientation
 import com.zappyware.moviebrowser.data.tray.HorizontalPagerTrayWidget
-import com.zappyware.moviebrowser.data.tray.trayItemHeight
-import com.zappyware.moviebrowser.data.tray.trayItemWidth
 import com.zappyware.moviebrowser.data.widget.Widget
 
 @Composable
@@ -37,8 +36,20 @@ fun HorizontalPagerTrayWidgetComposable(
 
     val pagerState = rememberPagerState(pageCount = { tray.widgets.size })
 
-    val trayItemWidth = remember { tray.trayItemWidth }
-    val trayItemHeight = remember { tray.trayItemHeight }
+    val trayItemWidth = remember {
+        when (tray.orientation) {
+            Orientation.Portrait -> 198f
+            Orientation.Landscape -> 270f
+            Orientation.Circular -> 120f
+        }
+    }
+    val trayItemHeight = remember {
+        when (tray.orientation) {
+            Orientation.Portrait -> 270f
+            Orientation.Landscape -> 198f
+            Orientation.Circular -> 120f
+        }
+    }
 
     Column {
         Text(
